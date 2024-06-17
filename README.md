@@ -42,7 +42,7 @@ Add the Persistence code in the pom.xml file within dependencies tag.
 * Copy the dependency codes 
 * Add to the pom.xml file.
 
-	<dependencies>
+		<dependencies>
 	 <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 		    <groupId>mysql</groupId>
@@ -55,7 +55,7 @@ Add the Persistence code in the pom.xml file within dependencies tag.
 		    <artifactId>hibernate-core</artifactId>
 		    <version>5.6.15.Final</version>
 		</dependency>
-  </dependencies>
+  		</dependencies>
   
 ##### 3rd Step
 
@@ -64,11 +64,11 @@ Add the Persistence code in the pom.xml file within dependencies tag.
 * Add these persistence code written down in that file with proper table name,path name, password.
 
 
-	 <?xml version="1.0" encoding="UTF-8"?><persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	 	<?xml version="1.0" encoding="UTF-8"?><persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 	  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
-	<persistence-unit name="Dev">
+		<persistence-unit name="Dev">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>      <!-- for caching -->  
 		<properties>
@@ -80,8 +80,8 @@ Add the Persistence code in the pom.xml file within dependencies tag.
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
 		</properties>
-	</persistence-unit>
-</persistence>
+		</persistence-unit>
+		</persistence>
 
 ##### 4th Step
 
@@ -107,27 +107,27 @@ This package will used to create the table directly in the database.
 * To create column inside the table **@Column** have to be added before the variable name, if we have to add some constrain like unique or null we have to add we have to add nullable = false to make the column as not null like that  .Then to make getter and setter we have to make the use of **getter()** and **setter()** method.
 
  
-	@Entity
-	public class Student 
-	{
-	@Id
-	int student_id ;
-	
-	@Column(nullable = false)
-	String student_name ;
-	
-	@Column(nullable = false, unique = true)
-	String student_contact;
-	
-	@Column(nullable = false)
-	int student_class;
-	public int getStudent_id() {
-		return student_id;
-	}
-	public void setStudent_id(int student_id) {
-		this.student_id = student_id;
-	}
-	}
+		@Entity
+		public class Student 
+		{
+		@Id
+		int student_id ;
+		
+		@Column(nullable = false)
+		String student_name ;
+		
+		@Column(nullable = false, unique = true)
+		String student_contact;
+		
+		@Column(nullable = false)
+		int student_class;
+		public int getStudent_id() {
+			return student_id;
+		}
+		public void setStudent_id(int student_id) {
+			this.student_id = student_id;
+		}
+		}
 	
 	
 * **DAO PACKAGE** 
