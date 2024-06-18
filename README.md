@@ -1,5 +1,5 @@
-# Student Management System Using Hibernet
-This is a Student Management System made Using Hibernet Framework
+# Student Management System Using Hibernate
+This is a Student Management System made Using Hibernate Framework
 
 -----
 
